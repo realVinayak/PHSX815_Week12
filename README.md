@@ -25,4 +25,6 @@ using Gaussian kernel estimation) are shown in `histogram_generated_h_{H}.png`
 where H is varied. 
 <br/>
 It can be seen that as H decreases, the predicted values distribution become more "localized". 
-As H increases, the predicted values distribution becomes more smoothened.
+As H increases, the predicted values distribution becomes more smoothened. 
+<br/>
+Value of H = 0.25 and H = 0.5 seems to give the best results as they are not too localized and not too uniform.
