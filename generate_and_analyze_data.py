@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 mean_list = [1, 5]
 weight_list = [0.4, 0.6]
 N_sample = 1000
-H = 0.5
+H = 2.0
 
 def standard_gaussian(mean, std_dev, x):
     denom = 1 / (std_dev * math.sqrt(2 * math.pi))
@@ -35,12 +35,13 @@ def get_gaussian_estimate(point_to_eval, data_points, h):
 def main():
     generated_samples = generate_multimodal_data()
     generated_samples.sort()
-    plt.hist(generated_samples, bins=100, density=True)
+    plt.hist(generated_samples, label='Simulated Values', bins=100, density=True, alpha=0.6)
     final_values = [mixed_gaussian_prob(mean_list, weight_list, x) for x in generated_samples]
     predicted_values = [get_gaussian_estimate(point, generated_samples, H) for point in generated_samples]
-    plt.plot(generated_samples, final_values)
-    plt.plot(generated_samples, predicted_values)
-    plt.savefig('histogram_generated.png')
+    plt.plot(generated_samples, final_values, label='True Values', linewidth=6)
+    plt.plot(generated_samples, predicted_values, label='Predicted Values', linewidth=4)
+    plt.legend()
+    plt.savefig(f'histogram_generated_h_{H}.png')
 
 
 if __name__ == '__main__':
