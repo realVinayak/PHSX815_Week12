@@ -12,13 +12,15 @@ are defined conveniently in `generate_and_analyze_data.py` as `mean_list = [1, 5
 , `weight_list = [0.4, 0.6]`. 
 <br/>
 In `main()` of `generate_and_analyze_data.py`, first the multimodal data is generated. Next, `mixed_gaussian_prob()` gets the true values of the multimodal distribution for
-a given range (taken min and max of the generated data). `get_gaussian_estimate()` gets the
-Gaussian kernel density estimate of each point in the previous range - summing up Gaussian 
-contributions at a point with respect to every other point. 
+a given range (taking min and max of the generated data) using analytic expression. `get_gaussian_estimate()` gets the
+Gaussian kernel density estimate of each point - summing up Gaussian 
+contributions at a point with respect to every other point.
+<br/>
+Finally, these three distributions are plotted.
 <br/>
 `H = 2.0` is the standard deviation chosen for the Gaussian kernel. As `H` increases, it is expected
 that the `get_gaussian_estimate()` smoothens out and all values become likely since contribution of any point
-on any other point will be "faded". 
+on any other point will be "faded".  
 <br/>
 The plots containing the simulated values (as histogram), true values (using analytic method) and predicted values (
 using Gaussian kernel estimation) are shown in `histogram_generated_h_{H}.png`
