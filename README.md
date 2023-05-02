@@ -5,7 +5,6 @@ model a Gaussian mixture model. The mixture model is made
 of two Gaussian distributions with `mean_1 = 1` and `mean_2 = 5`.
 The standard deviation of both of these distributions is 1. 
 <br/>
-<br/>
 To run, type `python3 generate_and_analyze_data.py` <br/>
 The probability of first distribution being chosen is `0.4`, and naturally, 
 the probability of second distribution being chosen is `0.6`. These parameters
